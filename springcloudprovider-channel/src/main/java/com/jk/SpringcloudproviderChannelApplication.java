@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient //声明当前服务为eureka的客户端
+@EnableEurekaClient
 @MapperScan(value = {"com.jk.mapper"})
-public class SpringcloudproviderApplication {
+public class SpringcloudproviderChannelApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudproviderApplication.class, args);
+        SpringApplication.run(SpringcloudproviderChannelApplication.class, args);
     }
 }

@@ -1,6 +1,7 @@
 package com.jk.controller;
 
 import com.jk.entity.Order;
+import com.jk.mapper.OrderMapper;
 import com.jk.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController implements OrderService {
 
     @Autowired
-    private OrderService orderService;
+    private OrderMapper orderMapper;
 
     @Override
     public String queryOrderById(String orderId) {
