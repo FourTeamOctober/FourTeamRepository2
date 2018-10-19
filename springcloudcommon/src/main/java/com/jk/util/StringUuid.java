@@ -1,5 +1,5 @@
 
-package com.jk.domain.util;
+package com.jk.util;
 
 import java.util.UUID;
 

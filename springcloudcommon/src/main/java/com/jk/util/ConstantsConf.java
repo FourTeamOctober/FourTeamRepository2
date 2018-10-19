@@ -5,7 +5,7 @@
  * 创建日期:2018年8月8日下午10:57:57 
  * Copyright (c) 2018, yuxy123@gmail.com All Rights Reserved.</pre> 
  */  
-package com.jk.domain.util;
+package com.jk.util;
 
 /** 
  * <pre>项目名称：maven-test    

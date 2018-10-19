@@ -5,7 +5,7 @@
  * 创建日期:2018年8月10日下午5:04:55 
  * Copyright (c) 2018, yuxy123@gmail.com All Rights Reserved.</pre> 
  */  
-package com.jk.domain.util;
+package com.jk.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

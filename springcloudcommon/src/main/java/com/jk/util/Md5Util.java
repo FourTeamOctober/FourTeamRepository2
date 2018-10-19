@@ -1,4 +1,4 @@
-package com.jk.domain.util;
+package com.jk.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
