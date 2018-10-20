@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.gll_mapper.InquiryMapper">
+
+    <select id="selectInquiry" resultType="com.jk.domain.inquiry.Inquiry">
+        select tax_rate as taxRate,clearing_merchant as clearingMerchant,receiving_address as receivingAddress,distribution_mode as distributionMode,ticket_opening as ticketOpening,invoice_type as invoiceType,expected_receiving_cycle as expectedReceivingCycle,expected_total_price as expectedTotalPrice,remarks as remarks from t_Inquiry
+    </select>
+
+</mapper>
