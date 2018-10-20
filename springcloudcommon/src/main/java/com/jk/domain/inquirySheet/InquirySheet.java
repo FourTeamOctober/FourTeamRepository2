@@ -1,8 +1,10 @@
 package com.jk.domain.inquirySheet;
 
+import com.jk.util.PageUtil;
+
 import java.io.Serializable;
 
-public class InquirySheet  implements Serializable {
+public class InquirySheet extends PageUtil implements Serializable {
 
     private static final long serialVersionUID = 9110335048267610709L;
 
