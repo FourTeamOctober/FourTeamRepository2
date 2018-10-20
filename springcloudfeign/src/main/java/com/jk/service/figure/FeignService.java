@@ -1,7 +1,8 @@
-package com.jk.service.buyer;
+package com.jk.service.figure;
 
 import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient("service-buyer")
-public interface BuyerFeignService extends BuyerService{
+public interface FeignService extends FeignServiceApi {
+
 }
