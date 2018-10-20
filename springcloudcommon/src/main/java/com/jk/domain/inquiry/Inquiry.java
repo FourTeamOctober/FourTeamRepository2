@@ -1,8 +1,10 @@
 package com.jk.domain.inquiry;
 
+import com.jk.util.PageUtil;
+
 import java.io.Serializable;
 
-public class Inquiry implements Serializable {
+public class Inquiry extends PageUtil implements Serializable {
 
     private static final long serialVersionUID = 9110335048267610704L;
 
@@ -31,11 +33,70 @@ public class Inquiry implements Serializable {
     private String remarks;//备注信息
     private String enclosure;//附件
     private int materialSheetYn;//是否提供材料单  1 是 2 否
+    /*关联项目表查询的项目编码*/
+    private String coding;
+    /*关联项目表查询的项目名称*/
+    private String productName;
+    /*关联渠道ID*/
+    private String channelId;
+    /*项目关联渠道表获取渠道ID，渠道关联渠道类型获取渠道名称*/
+    private String productTypeName;
+    /*状态*/
+    private int inquiryStatus;
+    /*业务字段 是否进行条件查询*/
+    private Inquiry inquiry;
+
+    public Inquiry getInquiry() {
+        return inquiry;
+    }
+
+    public void setInquiry(Inquiry inquiry) {
+        this.inquiry = inquiry;
+    }
+
+    public int getInquiryStatus() {
+        return inquiryStatus;
+    }
+
+    public void setInquiryStatus(int inquiryStatus) {
+        this.inquiryStatus = inquiryStatus;
+    }
+
+    public String getCoding() {
+        return coding;
+    }
+
+    public void setCoding(String coding) {
+        this.coding = coding;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
+    public String getProductTypeName() {
+        return productTypeName;
+    }
+
+    public void setProductTypeName(String productTypeName) {
+        this.productTypeName = productTypeName;
+    }
 
     public String getInquirySheetId() {
         return inquirySheetId;
     }
-
     public void setInquirySheetId(String inquirySheetId) {
         this.inquirySheetId = inquirySheetId;
     }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.InquiryMapper">
+    <!--询价单列表查询-->
+    <select id="getInquiryList" parameterType="com.jk.domain.inquiry.Inquiry" resultType="com.jk.domain.inquiry.Inquiry">
+        SELECT
+        ti.inquiry_sheet_id as inquirySheetId,
+        tp.`product_id` as coding,
+        tp.`product_name` as productName,
+        ti.t_status as inquiryStatus,
+        ti.`end_time` as endTime,
+        tr.range_name as productTypeName,
+        tp.`purchase_quantity`as purchaseQuantity
+        FROM t_inquiry ti
+        LEFT JOIN t_product tp
+        ON ti.`product_id` = tp.`product_id`
+        LEFT JOIN t_range tr
+        ON ti.`channle_id`= tr.range_id
+        <where>
+            <if test="inquiry != null and inquiry !=''">
+            <if test="productName != null and productName != ''">
+                and tp.product_name like concat('%',#{productName},'%')
+            </if>
+            <if test="channelId != null and channelId != ''">
+                and tr.range_id = #{channelId}
+            </if>
+            <if test="inquiryStatus != 0 and inquiryStatus != null and inquiryStatus != ''">
+                and ti.t_status = #{inquiryStatus}
+            </if>
+            <if test="createTime != null and createTime != ''">
+                and ti.create_time <![CDATA[>=]]> #{createTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                and ti.end_time <![CDATA[<=]]> #{endTime}
+            </if>
+            </if>
+        </where>
+    </select>
+    <!--有材料单报价-->
+    <insert id="insertQuotation">
+        insert into t_server (t_serverId,t_brand,t_unitPrice,t_freightPrice,t_assemblePrice,t_otherName,t_otherPrice,t_desc,t_accessory,t_deliveryCycle,t_durationTime)
+        values(#{serverId},#{brand},#{unitPrice},#{freightPrice},#{assemblePrice},#{otherName},#{otherPrice},#{serverDesc},#{accessory},#{deliveryCycle},str_to_date(#{durationTime},'%Y-%m-%d'))
+
+</insert>
+</mapper>
