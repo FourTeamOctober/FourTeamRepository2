@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@MapperScan(value = {"com.jk.mapper"})
+@MapperScan("com.jk.mapper")
 public class SpringcloudproviderBuyerApplication {
 
     public static void main(String[] args) {
