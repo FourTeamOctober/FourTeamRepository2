@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jk.mapper.figure.FeignMapper">
+    <!--查询询图单-->
+    <select id="selectSheet"   resultType="com.jk.domain.inquirySheet.InquirySheet">
+         select inquiry_sheet_id as inquirySheetId,
+        create_time  as createTime,
+        end_time as endTime,
+        publish_time as publishTime ,
+         email as email, remarks as remarks,enclosure as enclosure  from t_inquiry_sheet
+    </select>
+<!--    &lt;!&ndash;询图单回填&ndash;&gt;
+    <select  id="selectSheetById"  parameterType="inquirySheetId"  resultType="List">
+          select inquiry_sheet_id as inquirySheetId,
+           create_time  as createTime,
+            end_time as endTime,
+            publish_time as publishTime ,
+             email as email, remarks as remarks,enclosure as enclosure  from t_inquiry_sheet
+            where  inquiry_sheet_id=#{inquirySheetId}
+    </select>
+    &lt;!&ndash;修改询图单列表&ndash;&gt;
+    <update  id="updateInquirySheetById"  parameterType="com.jk.domain.inquirySheet.InquirySheet">
+        update  t_inquiry_sheet  create_time=#{createTime},end_time=#{endTime},publish_time=#{publishTime},email=#{email},
+          remarks=#{remarks},enclosure=#{enclosure} where inquiry_sheet_id=inquirySheetId
+
+    </update>-->
+
+</mapper>
