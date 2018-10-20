@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8089
 eureka:
   client:
     serviceUrl:
@@ -14,3 +14,4 @@ spring:
     password: root
 mybatis:
   mapperLocations: classpath*:mapper/*.xml
+
